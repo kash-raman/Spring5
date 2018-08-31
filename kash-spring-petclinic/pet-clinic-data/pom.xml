@@ -5,7 +5,7 @@
 
     <groupId>edu.kash.learn</groupId>
     <artifactId>pet-clinic-data</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <packaging>jar</packaging>
 
     <name>pet-clinic-data</name>
@@ -70,4 +70,7 @@
     </build>
 
 
+    <scm>
+        <tag>kash-spring-petclinic-0.0.1</tag>
+    </scm>
 </project>
