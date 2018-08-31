@@ -5,7 +5,7 @@
 
     <groupId>edu.kash.learn</groupId>
     <artifactId>kash-spring-petclinic</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.4-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -42,7 +42,7 @@
     </build>
 
     <scm>
-        <developerConnection>scm:git:https://github.com:github.com/kash-raman/Spring5.git</developerConnection>
+        <developerConnection>scm:git:https://github.com/kash-raman/Spring5.git</developerConnection>
         <tag>kash-spring-petclinic-0.0.1</tag>
     </scm>
 
