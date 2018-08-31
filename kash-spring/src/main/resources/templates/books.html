@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring - Book List</title>
+</head>
+<body>
+<h1> Books:  </h1>
+
+<table>
+    <tr>
+        <th>id</th>
+        <th>Title</th>
+        <th> Author</th>
+        <th>Publisher</th>
+    </tr>
+    <tr th:each="book : ${books}">
+        <td th:text="${book.id}">123</td>
+        <td th:text="${book.title}">This</td>
+        <!--<td th:text="${book.author.firstname}">The</td>-->
+        <td th:text="${book.publisher.name}">Test</td>
+
+    </tr>
+</table>
+</body>
+</html>

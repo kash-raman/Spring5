@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring - Author List</title>
+</head>
+<body>
+<h1> Author:  </h1>
+
+<table>
+    <tr>
+        <th>id</th>
+        <th>Author First name</th>
+        <th>Author last name</th>
+
+    </tr>
+    <tr th:each="author : ${authors}">
+        <td th:text="${author.id}">123</td>
+        <td th:text="${author.firstname}">This</td>
+        <td th:text="${author.lastname}">This</td>
+
+
+    </tr>
+</table>
+</body>
+</html>
