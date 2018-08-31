@@ -5,7 +5,7 @@
 
     <groupId>edu.kash.learn</groupId>
     <artifactId>pet-clinic-web</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>pet-clinic-web</name>
