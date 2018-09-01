@@ -1,0 +1,10 @@
+sudo: required
+
+language: java
+
+services:
+  - mvn
+
+script:
+- cd kash-spring-petclinic
+- mvn clean install
