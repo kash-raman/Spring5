@@ -1,6 +1,8 @@
 package edu.kash.learn.model;
 
-public class Person {
+import edu.kash.learn.model.base.BaseEntity;
+
+public class Person extends BaseEntity {
     String firstName;
     String lastName;
 }
