@@ -37,10 +37,10 @@ public class DataInit implements CommandLineRunner {
         vet.setId(1L);
         vet.setFirstName("Kas");
         vet.setLastName("raman");
-        ownerService.save(String.valueOf(owner.getId()), owner);
+        ownerService.save(owner);
 
-        petService.save(String.valueOf(pet.getId()), pet);
-        vetService.save(String.valueOf(vet.getId()), vet);
+        petService.save(pet);
+        vetService.save(vet);
         log.info("Done with CommandLineRunner - Impl - data inserted");
 
     }

@@ -14,7 +14,7 @@ public class PetServiceTest {
         pet.setId(1L);
         pet.setPetType(null);
         PetMapService ownerMapService = new PetMapService();
-        ownerMapService.save(String.valueOf(pet.getId()), pet);
+        ownerMapService.save(pet);
         Assert.assertTrue(!ownerMapService.findAll().isEmpty());
         ownerMapService.delete(pet);
         Assert.assertTrue(ownerMapService.findAll().isEmpty());

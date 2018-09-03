@@ -15,7 +15,7 @@ public class OwnerServiceTest {
         owner.setFirstName("Kas");
         owner.setLastName("raman");
         OwnerMapService ownerMapService = new OwnerMapService();
-        ownerMapService.save(String.valueOf(owner.getId()), owner);
+        ownerMapService.save(owner);
         Assert.assertTrue(!ownerMapService.findAll().isEmpty());
         ownerMapService.delete(owner);
         Assert.assertTrue(ownerMapService.findAll().isEmpty());
