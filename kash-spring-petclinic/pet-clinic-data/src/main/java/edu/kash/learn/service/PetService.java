@@ -2,12 +2,6 @@ package edu.kash.learn.service;
 
 import edu.kash.learn.model.Pet;
 
-import java.util.List;
+public interface PetService extends CrudService<Pet, String> {
 
-public interface PetService {
-    Pet findById(String id);
-
-    List<Pet> findAll();
-
-    Pet save(Pet pet);
 }
