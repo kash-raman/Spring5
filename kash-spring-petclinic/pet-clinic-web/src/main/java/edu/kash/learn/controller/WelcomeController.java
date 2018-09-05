@@ -12,6 +12,6 @@ public class WelcomeController
     @RequestMapping({"index", "", "/index.html"})
     public String getWelcomepage(Model model) {
         model.addAttribute("name", "Hello World");
-        return "index";
+        return "welcome";
     }
 }

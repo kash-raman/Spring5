@@ -15,6 +15,7 @@ public abstract class AbstractCrudMapService<T extends BaseEntity, ID extends St
     public T save(T object) {
         if (object != null) {
             long nextId = getMaxValue();
+            System.out.println("New nextid init");
             object.setId(nextId);
             return map.put((ID) String.valueOf(nextId), object);
         }

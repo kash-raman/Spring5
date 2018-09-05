@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en"
-      xmlns="http://www.w3.org/1999/xhtml"
->
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'vets')}">
 <head>
-    <meta charset="UTF-8">
+    <meta charset=" UTF-8">
     <title>Pet Clinic Index</title>
 </head>
 <body>
-<H1>List of Vets!</H1>
-<table>
+<H2>List of Vets!</H2>
+<table id="vets" class="table table-striped">
     <tr>
         <th>id</th>
         <th>Firstname</th>
