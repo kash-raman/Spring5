@@ -13,16 +13,18 @@ public abstract class AbstractCrudMapService<T extends BaseEntity, ID extends St
     }
 
     public T save(T object) {
+        System.out.println("Called  to save from : " + this.getClass());
         if (object != null) {
             long nextId = getMaxValue();
             System.out.println("New nextid init");
             object.setId(nextId);
-            return map.put((ID) String.valueOf(nextId), object);
+            map.put((ID) String.valueOf(nextId), object);
+            return object;
         }
         throw new RuntimeException();
     }
 
-    public Set findAll() {
+    public Set<T> findAll() {
         return new HashSet(map.values());
     }
 

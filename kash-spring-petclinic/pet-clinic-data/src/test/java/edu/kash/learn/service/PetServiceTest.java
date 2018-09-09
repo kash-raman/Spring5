@@ -13,7 +13,7 @@ public class PetServiceTest {
         Pet pet = new Pet();
         pet.setId(1L);
         pet.setPetType(null);
-        PetMapService ownerMapService = new PetMapService();
+        PetMapService ownerMapService = new PetMapService(null);
         ownerMapService.save(pet);
         Assert.assertTrue(!ownerMapService.findAll().isEmpty());
         ownerMapService.delete(pet);

@@ -14,7 +14,7 @@ public class VetServiceTest {
         owner.setId(1L);
         owner.setFirstName("Kas");
         owner.setLastName("raman");
-        VetService ownerMapService = new VetMapService();
+        VetService ownerMapService = new VetMapService(null);
         ownerMapService.save(owner);
         Assert.assertTrue(!ownerMapService.findAll().isEmpty());
         ownerMapService.delete(owner);
