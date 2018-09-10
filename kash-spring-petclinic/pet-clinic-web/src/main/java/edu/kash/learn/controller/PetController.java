@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/pet")
+@RequestMapping("/pets")
 public class PetController {
     private PetService petService;
 

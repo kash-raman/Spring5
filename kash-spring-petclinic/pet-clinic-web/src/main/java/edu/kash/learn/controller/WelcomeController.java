@@ -14,4 +14,10 @@ public class WelcomeController
         model.addAttribute("name", "Hello World");
         return "welcome";
     }
+
+    @RequestMapping({"oups", "vets.html"})
+    public String find(Model model) {
+        model.addAttribute("name", "Not Implemented");
+        return "welcome";
+    }
 }
