@@ -5,7 +5,7 @@
 
     <groupId>edu.kash.learn</groupId>
     <artifactId>kash-spring-petclinic</artifactId>
-    <version>0.0.4-SNAPSHOT</version>
+    <version>0.0.5-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
