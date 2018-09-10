@@ -2,6 +2,7 @@ package edu.kash.learn.service.map;
 
 import edu.kash.learn.model.base.BaseEntity;
 import edu.kash.learn.service.CrudService;
+import edu.kash.learn.service.support.ServiceHelper;
 
 import java.util.*;
 
@@ -44,7 +45,7 @@ public abstract class AbstractCrudMapService<T extends BaseEntity, ID extends St
         if (map.isEmpty()) {
             return 1;
         }
-        return Long.parseLong(Collections.max(map.keySet())) + 1;
+        return ServiceHelper.getaLong(Collections.max(map.keySet())) + 1;
     }
 
 }

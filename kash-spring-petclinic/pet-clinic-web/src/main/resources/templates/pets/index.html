@@ -7,19 +7,23 @@
 </head>
 <body>
 <H1>List of Pets!</H1>
-<table>
+<table class="table table-striped">
     <tr>
         <th>id</th>
         <th>Type</th>
-        <th>Owned by</th>
+        <th>Owned by - first name</th>
+        <th>Last name</th>
+
         <th> DOB</th>
     </tr>
-    <tr th:each="owner : ${pets}">
-        <td th:text="${owner.id}">123</td>
-        <td th:text="${owner.petType}">This</td>
-        <!--<td th:text="${owner.author.firstname}">The</td>-->
-        <td th:text="${owner.owner}">Test</td>
-        <td th:text="${owner.birthDate}">Test</td>
+    <tr th:each="pet : ${pets}">
+        <td th:text="${pet.id}">123</td>
+        <td th:text="${pet.petType.name}">This</td>
+        <!--<td th:text="${pet.author.firstname}">The</td>-->
+        <td th:text="${pet.owner.firstName}">Test</td>
+        <td th:text="${pet.owner.lastName}">Test</td>
+
+        <td th:text="${pet.birthDate}">Test</td>
 
     </tr>
 </table>

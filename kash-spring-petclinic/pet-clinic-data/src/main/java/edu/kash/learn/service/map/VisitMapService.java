@@ -2,9 +2,11 @@ package edu.kash.learn.service.map;
 
 import edu.kash.learn.model.Visit;
 import edu.kash.learn.service.VisitService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
+@Profile({"default", "map"})
 public class VisitMapService extends AbstractCrudMapService<Visit, String> implements VisitService {
     private PetMapService petMapService;
 
