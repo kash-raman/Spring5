@@ -1,14 +1,21 @@
 package edu.kash.learn.service.support;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ServiceHelperTest {
 
-    @Test(expected = RuntimeException.class)
+    @Test
     public void getaLongException() {
-        ServiceHelper.getaLong("asdf");
+        Assertions.assertThrows(RuntimeException.class, new Executable() {
+            @Override
+            public void execute() throws Throwable {
+                ServiceHelper.getaLong("asdf");
+            }
+        });
     }
 
     @Test

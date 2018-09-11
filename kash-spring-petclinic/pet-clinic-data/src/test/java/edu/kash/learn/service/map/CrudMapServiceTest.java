@@ -1,17 +1,18 @@
 package edu.kash.learn.service.map;
 
 import edu.kash.learn.model.base.BaseEntity;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
+
 
 public class CrudMapServiceTest {
 
     CrudMapService crudMapService;
     BaseEntity baseEntity;
 
-    @Before
+    @BeforeAll
     public void setUp() throws Exception {
         crudMapService = new CrudMapService();
         baseEntity = new BaseEntity();

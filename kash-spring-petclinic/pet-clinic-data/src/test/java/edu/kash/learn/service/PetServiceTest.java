@@ -3,8 +3,9 @@ package edu.kash.learn.service;
 
 import edu.kash.learn.model.Pet;
 import edu.kash.learn.service.map.PetMapService;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class PetServiceTest {
 
@@ -15,8 +16,8 @@ public class PetServiceTest {
         pet.setPetType(null);
         PetMapService ownerMapService = new PetMapService(null);
         ownerMapService.save(pet);
-        Assert.assertTrue(!ownerMapService.findAll().isEmpty());
+        assertTrue(!ownerMapService.findAll().isEmpty());
         ownerMapService.delete(pet);
-        Assert.assertTrue(ownerMapService.findAll().isEmpty());
+        assertTrue(ownerMapService.findAll().isEmpty());
     }
 }

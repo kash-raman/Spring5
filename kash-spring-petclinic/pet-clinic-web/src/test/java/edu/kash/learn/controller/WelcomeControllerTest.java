@@ -1,7 +1,7 @@
 package edu.kash.learn.controller;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
@@ -13,7 +13,7 @@ public class WelcomeControllerTest {
 
     WelcomeController welcomeController;
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
         welcomeController = new WelcomeController();
     }
