@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util" xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+    <bean class="com.learn.spring5.demo.ioc.example.OneSample">
+        <constructor-arg name="value" value="123"/>
+        <constructor-arg name="values" value="String"/>
+    </bean>
+    <bean class="com.learn.spring5.demo.ioc.example.OneSample">
+        <constructor-arg index="0" value="12"/>
+        <constructor-arg index="1" value="string"/>
+    </bean>
+    <bean class="com.learn.spring5.demo.ioc.example.OneSample">
+        <constructor-arg index="1" value="12"/>
+        <constructor-arg index="0" value="123"/>
+    </bean>
+    <bean class="com.learn.spring5.demo.ioc.example.TwoSample">
+        <property name="number" value="12"/>
+        <property name="numberValue" value="0"/>
+        <property name="properties">
+            <props>
+                <prop key="administrator">administrator@example.org</prop>
+                <prop key="support">support@example.org</prop>
+                <prop key="development">development@example.org</prop>
+            </props>
+        </property>
+        <property name="localList">
+            <list>
+                <value>hello World</value>
+                <value>welcom Hellboy</value>
+            </list>
+        </property>
+        <property name="localMap">
+            <ref bean="emailMap"/>
+        </property>
+        <property name="localSet">
+            <set>
+                <value>test 123</value>
+
+            </set>
+        </property>
+    </bean>
+
+    <bean id="mapping" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="properties">
+            <value>
+                name=kasthuri
+                name.emp=opensource
+            </value>
+        </property>
+    </bean>
+    <util:list id="list1">
+        <value>foo@bar.com</value>
+        <value>foo1@bar.com</value>
+    </util:list>
+
+    <util:list id="list2">
+        <value>foo2@bar.com</value>
+        <value>foo3@bar.com</value>
+    </util:list>
+
+    <util:map id="emailMap" value-type="java.util.List">
+        <!-- Map between String key and List -->
+        <entry key="entry1" value-ref="list1"/>
+        <entry key="entry2" value-ref="list2"/>
+    </util:map>
+</beans>

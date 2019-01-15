@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:component-scan base-package="com.learn.spring5.demo.ioc.example.check"/>
+    <bean class="com.learn.spring5.demo.ioc.example.BeanNamingConvension"/>
+    <bean id="givenId" name="givenId" class="com.learn.spring5.demo.ioc.example.BeanNamingConvension"/>
+    <bean name="namedId secondName;afterSemi:afterColan,afterComma namedSpace"
+          class="com.learn.spring5.demo.ioc.example.BeanNamingConvension"/>
+    <bean name="beanNaming" class="com.learn.spring5.demo.ioc.example.BeanNamingConvension"/>
+    <bean class="com.learn.spring5.demo.ioc.example.BeanNamingConvension"/>
+    <alias name="givenId" alias="testGivenId"/>
+
+    <bean id="clientService"
+          class="com.learn.spring5.demo.ioc.example.StaticFactoryMethod"
+          factory-method="createInstance"/>
+    <bean id="oneSample" class="com.learn.spring5.demo.ioc.example.OneSample">
+        <constructor-arg type="java.lang.String" value="12"/>
+        <constructor-arg type="int" value="123"/>
+    </bean>
+    <bean class="com.learn.spring5.demo.ioc.example.InnerBean"/>
+</beans>
