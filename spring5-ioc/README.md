@@ -36,7 +36,7 @@ The container performs bean dependency resolution as follows:
 
 An inner bean definition does not require a defined ID or name. If specified, the container does not use such a value as an identifier. The container also ignores the scope flag on creation, because inner beans are always anonymous and are always created with the outer bean. It is not possible to access inner beans independently or to inject them into collaborating beans other than into the enclosing bean.
 
-The <list/>, <set/>, <map/>, and <props/> elements set the properties and arguments of the Java Collectiontypes List, Set, Map, and Properties, respectively.
+The list/>, set/>, map/>, and props/> elements set the properties and arguments of the Java Collectiontypes List, Set, Map, and Properties, respectively.
 
  @Autowired for interfaces that are well-known resolvable dependencies: BeanFactory, ApplicationContext, Environment, ResourceLoader, ApplicationEventPublisher, and MessageSource
 
