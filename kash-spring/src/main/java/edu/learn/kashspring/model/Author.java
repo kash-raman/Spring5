@@ -7,19 +7,13 @@ import java.util.Set;
 
 @Entity
 public class Author {
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     long id;
-
     String firstname;
+    String lastname;
+    @ManyToMany(mappedBy = "authors")
+    Set<Book> books = new HashSet<>();
 
     public Author() {
     }
@@ -37,7 +31,13 @@ public class Author {
         this.books = books;
     }
 
-    String lastname;
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     @Override
     public String toString() {
@@ -63,9 +63,6 @@ public class Author {
         return Objects.hash(id);
     }
 
-    @ManyToMany(mappedBy = "authors")
-    Set<Book> books = new HashSet<>();
-
     public String getFirstname() {
         return firstname;
     }
@@ -78,15 +75,15 @@ public class Author {
         return lastname;
     }
 
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
     public Set<Book> getBooks() {
         return books;
     }
 
     public void setBooks(Set<Book> books) {
         this.books = books;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
     }
 }

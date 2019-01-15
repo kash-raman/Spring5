@@ -4,13 +4,13 @@ buildscript {
 
 plugins { id "io.spring.dependency-management" version "1.0.5.RELEASE" }
 
-ext { springBootVersion = '2.0.5.RELEASE' }
+ext { springBootVersion = '2.1.1.RELEASE' }
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
 
 jar {
-    baseName = 'gs-multi-module-library'
+    baseName = 'Spring5-preparation'
     version = '0.0.1-SNAPSHOT'
 }
 sourceCompatibility = 1.8
@@ -19,6 +19,7 @@ repositories { mavenCentral() }
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter')
+    implementation('org.apache.commons:commons-lang3')
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 

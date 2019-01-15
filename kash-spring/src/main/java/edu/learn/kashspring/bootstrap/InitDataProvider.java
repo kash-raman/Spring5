@@ -11,9 +11,6 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
-import java.util.HashSet;
-import java.util.Set;
-
 @Component
 public class InitDataProvider implements ApplicationListener<ContextRefreshedEvent> {
     private BookRepo bookRepo;
@@ -24,8 +21,9 @@ public class InitDataProvider implements ApplicationListener<ContextRefreshedEve
         this.bookRepo = bookRepo;
         this.authorRepo = authorRepo;
     }
-@Autowired
-    public InitDataProvider(BookRepo bookRepo, AuthorRepo authorRepo,PublisherRepo publisherRepo) {
+
+    @Autowired
+    public InitDataProvider(BookRepo bookRepo, AuthorRepo authorRepo, PublisherRepo publisherRepo) {
         this.bookRepo = bookRepo;
         this.authorRepo = authorRepo;
         this.publisherRepo = publisherRepo;

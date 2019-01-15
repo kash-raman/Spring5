@@ -12,6 +12,32 @@ public class Book {
     long id;
     String title;
     String isbn;
+    @OneToOne
+    Publisher publisher;
+    @ManyToMany
+    @JoinTable(name = "inventory", joinColumns = @JoinColumn(name = "book_id"), inverseJoinColumns = @JoinColumn(name = "author_id"))
+    Set<Author> authors = new HashSet<>();
+
+    public Book() {
+    }
+    public Book(String title, String isbn) {
+        this.title = title;
+        this.isbn = isbn;
+    }
+
+    public Book(String title, String isbn, Publisher publisher) {
+        this.title = title;
+        this.isbn = isbn;
+        this.publisher = publisher;
+    }
+
+    public Book(String title, String isbn, Publisher publisher, Set<Author> authors) {
+
+        this.title = title;
+        this.isbn = isbn;
+        this.publisher = publisher;
+        this.authors = authors;
+    }
 
     public long getId() {
         return id;
@@ -20,12 +46,6 @@ public class Book {
     public void setId(long id) {
         this.id = id;
     }
-
-    @OneToOne
-    Publisher publisher;
-    @ManyToMany
-    @JoinTable(name = "inventory", joinColumns = @JoinColumn(name = "book_id"), inverseJoinColumns = @JoinColumn(name = "author_id"))
-    Set<Author> authors = new HashSet<>();
 
     @Override
     public boolean equals(Object o) {
@@ -50,28 +70,6 @@ public class Book {
                 ", publisher='" + publisher + '\'' +
                 ", authors=" + authors +
                 '}';
-    }
-
-    public Book() {
-    }
-
-    public Book(String title, String isbn) {
-        this.title = title;
-        this.isbn = isbn;
-    }
-
-    public Book(String title, String isbn, Publisher publisher) {
-        this.title = title;
-        this.isbn = isbn;
-        this.publisher = publisher;
-    }
-
-    public Book(String title, String isbn, Publisher publisher, Set<Author> authors) {
-
-        this.title = title;
-        this.isbn = isbn;
-        this.publisher = publisher;
-        this.authors = authors;
     }
 
     public String getTitle() {

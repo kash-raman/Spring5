@@ -1,6 +1,5 @@
 package com.learn.spring5.demo.ioc.example;
 
-import org.apache.commons.lang3.RandomUtils;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
@@ -26,7 +25,7 @@ public class OneThing {
 
     @Bean
     String randomInstanceString() {
-        int a = RandomUtils.nextInt();
+        double a = Math.random();
         //this value chages every time.
         return String.valueOf(a);
     }

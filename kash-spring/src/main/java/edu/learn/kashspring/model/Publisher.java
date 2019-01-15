@@ -10,8 +10,16 @@ public class Publisher {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     long id;
+    String name;
+    String address;
 
     public Publisher() {
+    }
+
+    public Publisher(String name, String address) {
+
+        this.name = name;
+        this.address = address;
     }
 
     public String getName() {
@@ -30,14 +38,5 @@ public class Publisher {
     public void setAddress(String address) {
         this.address = address;
     }
-
-    public Publisher(String name, String address) {
-
-        this.name = name;
-        this.address = address;
-    }
-
-    String name;
-    String address;
 
 }

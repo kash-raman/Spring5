@@ -11,13 +11,17 @@ buildscript {
 
 }
 
+
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
-group = 'com.learn.spring5'
-version = '0.0.1-SNAPSHOT'
+bootJar {
+    baseName = 'spring5-preparation-ioc'
+    version = '0.0.1-SNAPSHOT'
+}
+
 sourceCompatibility = 1.8
 
 repositories {
@@ -26,16 +30,6 @@ repositories {
 
 
 dependencies {
-    implementation('org.springframework.boot:spring-boot-starter-data-mongodb-reactive')
-    implementation('org.springframework.boot:spring-boot-starter-thymeleaf')
-    implementation('org.springframework.boot:spring-boot-starter-webflux')
     compile('org.springframework.boot:spring-boot-starter-web')
-
-    compileOnly('org.projectlombok:lombok')
-    compile('javax.servlet:javax.servlet-api')
-    compile('de.flapdoodle.embed:de.flapdoodle.embed.mongo')
-    compile('org.springframework.boot:spring-boot-starter-actuator')
     testImplementation('org.springframework.boot:spring-boot-starter-test')
-
-    testImplementation('io.projectreactor:reactor-test')
 }

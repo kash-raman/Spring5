@@ -1,7 +1,6 @@
 package com.learn.spring5.demo.config;
 
 import com.learn.spring5.demo.ioc.example.BeanNamingConvension;
-import org.apache.commons.lang3.RandomUtils;
 import org.springframework.context.annotation.*;
 
 @Configuration
@@ -28,7 +27,7 @@ public class BeanNamingConfiguration {
     //TODO inner class
     @Bean
     String oneInstanceOnly() {
-        int a = RandomUtils.nextInt();
+        double a = Math.random();
         return String.valueOf(a);
     }
 

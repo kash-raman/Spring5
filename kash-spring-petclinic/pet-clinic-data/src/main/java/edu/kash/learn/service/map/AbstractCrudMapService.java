@@ -4,8 +4,6 @@ import edu.kash.learn.model.base.BaseEntity;
 import edu.kash.learn.service.CrudService;
 import edu.kash.learn.service.support.ServiceHelper;
 
-import java.util.*;
-
 public abstract class AbstractCrudMapService<T extends BaseEntity, ID extends String> implements CrudService<T, ID> {
     protected Map<ID, T> map = new HashMap<>();
 

@@ -1,4 +1,3 @@
-
 rootProject.name = 'spring5-preparation'
-include 'lib' 
+include 'lib'
 include 'spring5-ioc'
