@@ -10,11 +10,11 @@ import javax.annotation.PreDestroy;
 @Component
 public class CallBack implements InitializingBean, DisposableBean {
     @PostConstruct
-    public void postConstruct() {
+    private void postConstruct() {
         System.out.println("im in postConstruct");
     }
 
-    public void init() {
+      void init() {
         System.out.println("im in init ");
     }
 
@@ -26,18 +26,16 @@ public class CallBack implements InitializingBean, DisposableBean {
     public void sout() {
         System.out.println("im here");
     }
-
     @Override
     public void destroy() throws Exception {
         System.out.println("DEstroy Me");
     }
-
-    public void destroyConfig() throws Exception {
+    private void destroyConfig() throws Exception {
         System.out.println("DEstroy Config");
     }
 
     @PreDestroy
-    public void Destroyanno() throws Exception {
+      void Destroyanno() throws Exception {
         System.out.println("DEstroy Anootation");
     }
 

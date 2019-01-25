@@ -9,10 +9,12 @@ import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.BeanCurrentlyInCreationException;
+import org.springframework.boot.web.servlet.context.XmlServletWebServerApplicationContext;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
+import org.springframework.web.context.support.XmlWebApplicationContext;
 
 import java.util.Arrays;
 
@@ -109,4 +111,12 @@ public class BeanRunnerTest {
 
     }
 
+    @Test
+    public void ApplicationContext() {
+        ApplicationContext context = new XmlWebApplicationContext();
+        ApplicationContext applicationContext = new XmlServletWebServerApplicationContext();
+        ApplicationContext ctx = new ClassPathXmlApplicationContext();
+        ((ClassPathXmlApplicationContext) ctx).afterPropertiesSet();
+
+    }
 }

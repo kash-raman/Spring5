@@ -8,6 +8,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.Arrays;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:callback.xml"})
 public class CallBackTest {
@@ -20,7 +22,7 @@ public class CallBackTest {
 
     @Test
     public void test() {
-        context.getBeanDefinitionNames();
+        System.out.println("helllo : " + Arrays.asList(context.getBeanDefinitionNames()));
         callback.sout();
     }
 }
